@@ -9,6 +9,9 @@ on:
       - reopened
       - synchronize
       - closed
+env:
+  PRES_BASE: mbluteau-ukhsa-code-review
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,31 +23,24 @@ jobs:
       - name: Copy images
         run: mkdir build && cp -R img build/img
 
-      - name: Marp Build (README)
+      - name: Marp Build (public html)
         uses: docker://marpteam/marp-cli:v1.7.0
         with:
-          args: README.md -o build/index.html
+          args: --html $PRES_BASE.md -o build/index.html
         env:
           MARP_USER: root:root
 
-      - name: Marp Build (README.pdf)
+      - name: Marp Build (pdf)
         uses: docker://marpteam/marp-cli:v1.7.0
         with:
-          args: README.md -o build/README.pdf
+          args: $PRES_BASE.md -o build/$PRES_BASE.pdf
         env:
           MARP_USER: root:root
 
       - name: Marp Build (README.pptx)
         uses: docker://marpteam/marp-cli:v1.7.0
         with:
-          args: README.md -o build/README.pptx
-        env:
-          MARP_USER: root:root
-
-      - name: Marp Build (docs folder)
-        uses: docker://marpteam/marp-cli:v1.7.0
-        with:
-          args: -I docs/ -o build/docs/
+          args: $PRES_BASE.md -o build/$PRES_BASE.pptx
         env:
           MARP_USER: root:root
 
