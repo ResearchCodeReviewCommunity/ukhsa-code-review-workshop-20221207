@@ -26,21 +26,21 @@ jobs:
       - name: Marp Build (public html)
         uses: docker://marpteam/marp-cli:v1.7.0
         with:
-          args: --html $PRES_BASE.md -o build/index.html
+          args: --html ${{ env.PRES_BASE }}.md -o build/index.html
         env:
           MARP_USER: root:root
 
       - name: Marp Build (pdf)
         uses: docker://marpteam/marp-cli:v1.7.0
         with:
-          args: $PRES_BASE.md -o build/$PRES_BASE.pdf
+          args: ${{ env.PRES_BASE }}.md -o build/${{ env.PRES_BASE }}.pdf
         env:
           MARP_USER: root:root
 
       - name: Marp Build (README.pptx)
         uses: docker://marpteam/marp-cli:v1.7.0
         with:
-          args: $PRES_BASE.md -o build/$PRES_BASE.pptx
+          args: ${{ env.PRES_BASE }}.md -o build/${{ env.PRES_BASE }}.pdf
         env:
           MARP_USER: root:root
 
