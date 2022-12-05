@@ -33,14 +33,14 @@ jobs:
       - name: Marp Build (pdf)
         uses: docker://marpteam/marp-cli:v1.7.0
         with:
-          args: ${{ env.PRES_BASE }}.md -o build/${{ env.PRES_BASE }}.pdf
+          args: ${{ env.PRES_BASE }}.md --allow-local-files -o build/${{ env.PRES_BASE }}.pdf
         env:
           MARP_USER: root:root
 
       - name: Marp Build (README.pptx)
         uses: docker://marpteam/marp-cli:v1.7.0
         with:
-          args: ${{ env.PRES_BASE }}.md -o build/${{ env.PRES_BASE }}.pdf
+          args: ${{ env.PRES_BASE }}.md --allow-local-files -o build/${{ env.PRES_BASE }}.pptx
         env:
           MARP_USER: root:root
 
