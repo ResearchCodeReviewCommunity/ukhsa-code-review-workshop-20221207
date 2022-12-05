@@ -206,7 +206,7 @@ or specific research domain.
 
 ## Meet and Agree Objectives
 
-A code review can improve code in a lot of different ways, but trying to do everything at once is rarely effective. Make it clear to all people involved why they are are pariticpating.
+A code review can improve code in a lot of different ways, but trying to do everything at once is rarely effective. Make it clear to all people involved why they are are participating.
 
 Key questions to collectively answer are:
 * What is the author expecting from the review?
@@ -220,11 +220,11 @@ Key questions to collectively answer are:
 
 5 steps:
 
-* Code author communicates the code and its context to reviewer(s) in advance.
-* Reviewer(s) review code in light of objectives and areas of focus, agreed upon during the "Meet and Agree Objectives"
-* Author and reviewer(s) meet in real time and discuss the code.
-* Code author implements changes.
-* Rinse and repeat.
+1) Code author communicates the code and its context to reviewer(s) in advance.
+1) Reviewer(s) review code in light of objectives and areas of focus, agreed upon during the "Meet and Agree Objectives"
+1) Author and reviewer(s) meet in real time and discuss the code.
+1) Code author implements changes.
+1) Rinse and repeat.
 
 ---
 
